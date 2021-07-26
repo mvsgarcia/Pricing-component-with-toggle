@@ -1,11 +1,169 @@
+<!--
+========================
+Author: Miecaela Garcia
+Date: August 2021
+========================
+-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Component with Toggle</title>
+
+    <!-- Tailwind CSS CDN-->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        .font-montserrat { font-family: 'Montserrat', sans-serif;}
+
+        input:checked ~ .dot {
+            transform: translateX(125%);
+            }
+    </style>
 </head>
-<body>
-    hello world
+<body class="relative font-montserrat bg-[#F7F7FF] w-full h-full">
+
+    <!-- Bg design -->
+    <img class="absolute top-0 right-0 w-auto h-auto" src="img/bg-top.svg" alt="bg top image">
+    <img class="absolute bottom-0 left-0 w-auto h-auto" src="img/bg-bottom.svg" alt="bg bottom image">
+
+    <!-- Main -->
+    <main class="absolute z-10 flex flex-col items-center justify-center w-full h-full space-y-4">
+        
+        <!-- Our Pricing -->
+        <header class="flex flex-col items-center w-full pt-20 space-y-10">
+            <h2 class="text-[#6d708d] text-4xl">Our Pricing</h2>
+
+            <!-- Plan Toggle -->
+            <div class="flex flex-row items-center justify-center space-x-10 text-[#b3b5c6] text-lg">
+                <p>Annually</p>
+                
+                <div class="flex items-center justify-center">
+                
+                    <label for="toggle" class="flex items-center cursor-pointer">
+                        <!-- toggle -->
+                        <div class="relative flex items-center">
+                            <!-- input -->
+                            <input type="checkbox" id="toggle" class="sr-only">
+                            <!-- line -->
+                            <div class="block w-24 h-12 bg-gradient-to-r from-[#a3a8f0] to-[#696fdd] rounded-full"></div>
+                            <!-- dot -->
+                            <div class="absolute transition bg-[#f6f6fe] rounded-full w-9 h-9 dot left-2"></div>
+                        </div>
+                    </label>
+                </div>
+
+                <p>Monthly</p>
+            </div>
+        </header>
+
+        <!-- Cards -->
+        <div class="flex flex-row items-center justify-center w-full h-full">
+
+            <!-- Basic -->
+            <div class="flex items-center justify-center bg-white shadow-xl h-[75%]  w-96  rounded-l-xl">
+                <div class="flex flex-col items-center justify-center w-full px-10 py-4 text-[#494c5f] space-y-6">
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-8">
+                        <p class="text-xl ">Basic</p>
+                        <h1 id="annual" class="flex items-center gap-2 text-7xl "><span class="text-4xl ">&dollar;</span>199.99</h1>
+                        <h1 id="month" class="hidden text-7xl">&dollar;19.99</h1>
+                    </div>
+                    
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-6 text-lg ">
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>500 GB Storage</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>2 Users Allowed</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>Send up to 3 GB</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <button class="h-16 rounded-lg w-full tracking-widest uppercase text-white bg-gradient-to-r from-[#a3a8f0] to-[#696fdd] hover:bg-none hover:border-2 hover:border-[#696fdd] hover:text-[#696fdd]">Learn more</button>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- Professional -->
+            <div class="flex items-center justify-center bg-gradient-to-b from-[#a3a8f0] to-[#696fdd] shadow-xl w-96  h-[80%]  rounded-xl">
+                <div class="flex flex-col items-center justify-center w-full p-10 space-y-6 text-white">
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-8">
+                        <p class="text-xl ">Professional</p>
+                        <h1 id="annual" class="flex items-center gap-2 text-7xl "><span class="text-4xl ">&dollar;</span>249.99</h1>
+                        <h1 id="month" class="flex items-center hidden gap-2 text-7xl "><span class="text-5xl">&dollar;</span>24.99</h1>
+                    </div>
+            
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-6 text-lg ">
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>1 TB Storage</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>5 Users Allowed</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>Send up to 10 GB</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <button
+                            class="h-16 rounded-lg w-full tracking-widest uppercase text-[#696fdd] bg-white hover:border-2 hover:border-white hover:text-white hover:bg-transparent">Learn
+                            more</button>
+                    </div>
+            
+            
+                </div>
+            </div>
+
+            <!-- Master -->
+            <div class="flex items-center justify-center bg-white shadow-xl h-[75%]  w-96  rounded-r-xl">
+                <div class="flex flex-col items-center justify-center w-full px-10 py-4 text-[#494c5f] space-y-6">
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-8">
+                        <p class="text-xl ">Basic</p>
+                        <h1 id="annual" class="flex items-center gap-2 text-7xl "><span class="text-4xl ">&dollar;</span>399.99</h1>
+                        <h1 id="month" class="flex items-center hidden gap-2 text-7xl "><span class="text-4xl ">&dollar;</span>39.99</h1>
+                    </div>
+            
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-6 text-lg">
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>2 TB Storage</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>10 Users Allowed</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <p>Send up to 20 GB</p>
+                        <hr class="w-full bg-[#b3b5c6]">
+                        <button
+                            class="h-16 rounded-lg w-full tracking-widest uppercase text-white bg-gradient-to-r from-[#a3a8f0] to-[#696fdd] hover:bg-none hover:border-2 hover:border-[#696fdd] hover:text-[#696fdd]">Learn
+                            more</button>
+                    </div>
+            
+            
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+
+    
+<!--JS for toggle-->
+<script>
+    function myFunction() {
+        var x = document.querySelectorAll('.annual');
+        var y = document.querySelectorAll('.month');
+        for (var i = 0; i < x.length; i++) {
+            if (document.getElementById("toggleSwitch").checked == true) {
+                x[i].classList.add('hidden');
+                y[i].classList.remove('hidden');
+            } else {
+                x[i].classList.remove('hidden');
+                y[i].classList.add('hidden');
+            }
+        }
+    }
+</script>
+
+<!-- JIT CDN -->
+<script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
 </body>
 </html>
