@@ -1,7 +1,7 @@
 <!--
 ========================
 Author: Miecaela Garcia
-Date: August 2021
+Date: July 2021
 ========================
 -->
 
@@ -24,16 +24,21 @@ Date: August 2021
         input:checked ~ .dot {
             transform: translateX(125%);
             }
+        
+        .scale-85 {
+            --tw-scale-x: .85;
+            --tw-scale-y: .85;
+        }
     </style>
 </head>
 <body class="relative font-montserrat bg-[#F7F7FF] w-full h-full">
 
     <!-- Bg design -->
-    <img class="absolute top-0 right-0 w-auto h-auto" src="img/bg-top.svg" alt="bg top image">
-    <img class="absolute bottom-0 left-0 w-auto h-auto" src="img/bg-bottom.svg" alt="bg bottom image">
+    <img class="absolute top-0 w-auto -right-24 lg:right-0 h-96 lg:h-auto" src="img/bg-top.svg" alt="bg top image">
+    <img class="absolute bottom-0 left-0 hidden w-auto h-auto lg:block" src="img/bg-bottom.svg" alt="bg bottom image">
 
     <!-- Main -->
-    <main class="absolute z-10 flex flex-col items-center justify-center w-full h-full py-20 space-y-20 xl:transform xl:scale-75 2xl:transform-none">
+    <main class="absolute z-10 flex flex-col w-full h-full py-10 space-y-20 transform md:py-20 lg:items-center lg:justify-center scale-85 md:scale-100 xl:scale-75 2xl:transform-none lg:transform-none">
         
         <!-- Our Pricing -->
         <header class="flex flex-col items-center w-full space-y-10">
@@ -63,10 +68,10 @@ Date: August 2021
         </header>
 
         <!-- Cards -->
-        <div class="flex flex-row items-center justify-center w-full">
+        <div class="flex flex-col items-center justify-center w-full pb-20 space-y-10 lg:space-y-0 lg:flex-row lg:pb-0">
 
             <!-- Basic -->
-            <div class="flex items-center justify-center bg-white shadow-xl h-[30rem] w-96 rounded-l-xl">
+            <div class="flex items-center justify-center bg-white shadow-xl h-[30rem] w-96 rounded-xl lg:rounded-l-xl">
                 <div class="flex flex-col items-center justify-center w-full px-10 py-4 text-[#494c5f] space-y-8">
                     <div class="flex flex-col items-center justify-center w-full h-full space-y-4">
                         <p class="text-xl ">Basic</p>
@@ -90,15 +95,15 @@ Date: August 2021
             </div>
 
             <!-- Professional -->
-            <div class="flex items-center justify-center bg-gradient-to-b from-[#a3a8f0] to-[#696fdd] shadow-xl w-96 h-[35rem] rounded-xl">
+            <div class="flex items-center justify-center bg-gradient-to-b from-[#a3a8f0] to-[#696fdd] shadow-xl w-96 h-[30rem] lg:h-[35rem] rounded-xl">
                 <div class="flex flex-col items-center justify-center w-full p-10 space-y-8 text-white">
-                    <div class="flex flex-col items-center justify-center w-full h-full space-y-8">
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-4">
                         <p class="text-xl ">Professional</p>
                         <h1 id="annual" class="flex items-center gap-2 text-7xl"><span class="text-4xl ">&dollar;</span>249.99</h1>
                         <h1 id="month" class="flex items-center hidden gap-2 text-7xl"><span class="text-5xl">&dollar;</span>24.99</h1>
                     </div>
             
-                    <div class="flex flex-col items-center justify-center w-full h-full space-y-6 text-lg ">
+                    <div class="flex flex-col items-center justify-center w-full h-full space-y-4 text-lg ">
                         <hr class="w-full bg-[#b3b5c6]">
                         <p>1 TB Storage</p>
                         <hr class="w-full bg-[#b3b5c6]">
@@ -116,7 +121,7 @@ Date: August 2021
             </div>
 
             <!-- Master -->
-            <div class="flex items-center justify-center bg-white shadow-xl h-[30rem] w-96 rounded-r-xl">
+            <div class="flex items-center justify-center bg-white shadow-xl h-[30rem] w-96 rounded-xl lg:rounded-l-xl">
                 <div class="flex flex-col items-center justify-center w-full px-10 py-4 text-[#494c5f] space-y-8">
                     <div class="flex flex-col items-center justify-center w-full h-full space-y-4">
                         <p class="text-xl">Basic</p>
